@@ -1,0 +1,20 @@
+<html><head>
+<STYLE TYPE="text/css">
+<!--
+TD{font-family: Verdana; font-size: 10pt; text-align: center;}
+--->
+</STYLE>
+</head>
+<body>
+<font face=verdana size=2>
+<br><br><br>
+<center>
+<br><br>
+<a href="cgi-bin/adm.cgi">Link 1</a>
+<br>
+<a href="cgi-bin/files.cgi">Link 2</a>
+<br>
+<a href="cgi-bin/adm.cgi?operation=twitter">Link 3</a>
+</center>
+</font>
+</body></html> 

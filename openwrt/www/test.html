@@ -1,0 +1,77 @@
+content-type: text/html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>
+Electricity Usage
+</title>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load('visualization', '1', {packages: ['corechart']});</script>
+<script type="text/javascript">
+  function drawVisualization() {
+     // Create and populate the data table.
+     var data = new google.visualization.DataTable();
+     data.addColumn('string', 'x');
+     data.addColumn('number', 'Today. Cost:  134.83'); 
+     data.addColumn('number', 'Yesterday. Cost: 45.12');
+
+data.addRow(["00", 440, 0]);
+data.addRow(["01", 431, 0]);
+data.addRow(["02", 397, 0]);
+data.addRow(["03", 421, 0]);
+data.addRow(["04", 426, 0]);
+data.addRow(["05", 423, 0]);
+data.addRow(["06", 529, 0]);
+data.addRow(["07", 584, 0]);
+data.addRow(["08", 733, 0]);
+data.addRow(["09", 944, 0]);
+data.addRow(["10", 883, 0]);
+data.addRow(["11", 774, 0]);
+data.addRow(["12", 1399, 0]);
+data.addRow(["13", 1356, 0]);
+data.addRow(["14", 1507, 537]);
+data.addRow(["15", 2068, 386]);
+
+
+     // Create and draw the visualization.
+     new google.visualization.LineChart(document.getElementById('day')).
+     draw(data, {curveType: "function",width: 1200, height: 400, title: 'Day usage', vAxis: {maxValue: 10}});
+  }
+                                                                                                        
+                                                                                                        
+ google.setOnLoadCallback(drawVisualization);
+</script>	
+<script type="text/javascript">
+  function drawVisualization() {
+     // Create and populate the data table.
+     var data = new google.visualization.DataTable();
+     data.addColumn('string', 'x');
+     data.addColumn('number', 'Wh usage. Cost: 1.79');
+
+data.addRow(["07", 4455]);
+data.addRow(["08", 13317]);
+
+
+     // Create and draw the visualization.
+     new google.visualization.LineChart(document.getElementById('month')).
+     draw(data, {curveType: "function",width: 1200, height: 400, title: 'This month usage', vAxis: {maxValue: 10}});
+  }
+                                                                                                        
+                                                                                                        
+ google.setOnLoadCallback(drawVisualization);
+</script>	
+ </head>
+<body style="font-family: Arial;border: 0 none;">
+<center>
+  <div id="day"></div>
+  <div id="month"></div>
+</center>
+</body>
+</html>
+
+
+
+
+

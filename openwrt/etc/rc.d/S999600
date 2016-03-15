@@ -1,0 +1,20 @@
+#!/bin/sh /etc/rc.common
+# webcam script
+# Copyright (C) 2007 OpenWrt.org
+
+START=99
+STOP=15
+
+start()
+{
+  echo start
+  # commands to launch application
+  /mnt/scripts/_start.sh &
+}
+      
+stop()
+{
+  echo stop
+  # commands to kill application
+  /mnt/scripts/_stop.sh &
+}

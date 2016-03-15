@@ -1,0 +1,46 @@
+First of all, comment (add # in front of them) the lines in /etc/inittab :
+
+tts/0::askfirst:/bin/ash --login
+ttyS0::askfirst:/bin/ash --login
+tty1::askfirst:/bin/ash --login
+
+set timezone:
+
+edit /etc/config/system and replace UTC with
+
+PST8PDT,M3.2.0,M11.1.0
+
+(http://wiki.openwrt.org/doc/uci/system#time.zones)
+
+or
+
+root@OpenWrt:~# uci set system.@system[0].timezone=PST8PDT,M3.2.0,M11.1.0
+root@OpenWrt:~# uci commit system
+
+reboot
+----------------------------
+
+setup USB storage:
+http://patinya-tuk.blogspot.com/2009/09/usb-storage-howtoopenwrt.html
+----------------------------
+
+install usb
+http://wiki.openwrt.org/doc/techref/opkg#installation.destinations
+
+add 
+ln -s /mnt/opt /opt
+
+to /etc/init.d/usbdrive
+
+then install with 
+
+opkg -force-space -dest usb install asterisk14  # or whatever else you want…
+
+opkg -force-space -dest usb install coreutils
+opkg -force-space -dest usb install bash
+opkg -force-space -dest usb install bc
+
+make sure START in usbdrive < START in your scripts
+
+#!/opt/bin/bash
+

@@ -1,0 +1,8 @@
+# reboot every 7 days at 01AM
+* 1 */7 * * /sbin/reboot > /dev/null
+
+ to timesync every 2AM
+# */15 * * * * /mnt/scripts/_setdate.sh > /dev/null
+
+# check the weather every 30 min
+*/30 * * * * /mnt/scripts/_getweather.sh &
